@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "fpt-app"
+version = "0.1.0"
+description = ""
+authors = ["collhuer <collhuer@gmail.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.110.0"
+uvicorn = "^0.28.0"
+pydantic = {extras = ["email"], version = "^2.6.4"}
+peewee = "^3.17.1"
+pytz = "^2024.1"
+bcrypt = "^4.1.2"
+passlib = "^1.7.4"
+python-jose = "^3.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

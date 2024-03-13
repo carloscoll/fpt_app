@@ -1,0 +1,33 @@
+# Entornos virtuales
+venv/
+env/
+ENV/
+
+# Bytecode compilado de Python
+__pycache__/
+*.py[cod]
+
+# Archivos de paquetes
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+
+# Archivos de log y base de datos
+*.log
+*.sql
+*.sqlite
+
+# Directorios de herramientas y caché
+.cache/
+.pytest_cache/
+.coverage
+
+# Archivos específicos del entorno de desarrollo
+.env
+.idea/
+.vscode/
+
+# Directorio de dependencias Node (si se usa)
+node_modules/
