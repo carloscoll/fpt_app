@@ -1,7 +1,6 @@
 // lib/services/user_service.dart
 import 'dart:convert';
 import 'package:fpt_app/services/token_service.dart';
-import 'package:fpt_app/utils/secure_storage_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'package:fpt_app/models/user.dart';
@@ -86,6 +85,24 @@ class UserService {
     }
     return response;
   }
+
+  Future<String> createQrCodeData() async {
+    try {
+      // Obtiene el usuario actual (asegúrate de que getUser() funcione correctamente).
+      final user = await getUser();
+      // Prepara un mapa con los datos que deseas incluir en el QR.
+      final Map<String, dynamic> qrMap = {
+        'id': user.id,
+        'drinks': user.drinks,
+        // Puedes agregar más campos si lo necesitas.
+      };
+      // Convierte el mapa a una cadena JSON.
+      return jsonEncode(qrMap);
+    } catch (e) {
+      throw Exception('Error al generar datos para el QR: $e');
+    }
+  }
+
 }
 
 /// Excepción para cuando la sesión expira.
